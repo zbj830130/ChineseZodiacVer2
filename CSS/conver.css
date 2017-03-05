@@ -1,0 +1,54 @@
+.conver {
+    background: #21262c;
+    width: 100%;
+    height: 730px;
+    border: 0px;
+    z-index: -100;
+    position: fixed;
+}
+
+.conver img {
+    /*    padding-top: 55px;*/
+    width: 100%;
+    height: auto;
+}
+
+.cover_text {
+    text-align: center;
+    width: 55%;
+    border-radius: 15px;
+    border: 1px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+}
+
+.cover_tip {
+    color: white;
+    font-size: 5vw;
+}
+
+.tt_conver {
+    height: 730px;
+}
+
+.bt_conver {
+    height: 150vh;
+}
+
+.backConver {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 730px;
+    border: 0px;
+    top: 0;
+    left: 0;
+    z-index: -99;
+}
+
+.backConver img {
+    width: 100%;
+    height: auto;
+    margin-top: 30vh;
+}

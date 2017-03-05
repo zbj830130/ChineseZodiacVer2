@@ -1,0 +1,8 @@
+.contain{
+    display: block;
+    min-height: 100vh;
+}
+
+.contain a{
+   margin-top: 50vh;
+}

@@ -1,0 +1,70 @@
+/* Wheel css*/
+
+#wheelDiv {
+    float: left;
+    display: inline-block;
+    height: 40vw;
+    width: 40vw;
+    margin: 0;
+    margin-top: 20vh;
+}
+
+#wheelDiv>svg {
+    height: 100%;
+    width: 100%;
+}
+
+.detailContain {
+    width: 80%;
+    margin-top: 0px;
+    margin-bottom: 110px;
+}
+
+.masonryItem {}
+
+.detailDiv {
+    display: inline-block;
+    float: left;
+    width: 55%;
+    min-height: 70vh;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.innerDiv {
+    background: rgba(160, 160, 160, 0.5);
+    background-color: transparent;
+}
+
+.innerDiv img {
+    width: 100%;
+    height: auto;
+}
+
+.closeAll {
+    display: inline-block;
+    width: 90%;
+}
+
+.closeAll span {
+    display: inline-block;
+    margin-left: 2vw;
+    font-size: 5vw;
+    color: #87c8fa;
+    cursor: pointer;
+}
+
+.closeButton {
+    display: inline-block;
+    width: 10%;
+    position: relative;
+    text-align: center;
+}
+
+.closeButton span {
+    display: inline-block;
+    margin-bottom: 3vh;
+    margin-right: 1vw;
+    color: brown;
+    cursor: pointer;
+    font-size: 2vw;
+}
