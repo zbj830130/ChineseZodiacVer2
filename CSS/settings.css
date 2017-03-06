@@ -155,7 +155,7 @@
     filter: alpha(opacity=100);
     -moz-opacity: 1;
     opacity: 1;
-    margin-top: 30vh;
+    margin-top: 15vh;
     margin-left: auto;
     margin-right: auto;
     z-index: 100003;
@@ -183,7 +183,7 @@
     width: 25%;
     margin-left: auto;
     position: relative;
-    top: -2vh;
+    top: -3vh;
 }
 
 .loginSubTitle img {

@@ -18,6 +18,7 @@
         public function queryZodiacInfo(){
             $mysqlHelper = new MySqlHelper();
             $con = $mysqlHelper->openConnect($this->serverName,$this->userName,$this->password,$this->databaseName);
+            
             $sqlstr = "select * from ZodiacInfo";
 
             $result = $mysqlHelper->queryData($con,$sqlstr);
@@ -42,29 +43,29 @@
         public function modifyZodiacSorting($newZodiacSortings){
             $mysqlHelper = new MySqlHelper();
             $con = $mysqlHelper->openConnect($this->serverName,$this->userName,$this->password,$this->databaseName);
-            $sqlstr = "";
+            
+            $stmt = $con->prepare("update ZodiacInfo set sorting=? where id=?;");
+            $stmt->bind_param("ii", $sorting, $id);
             
             for($i=0;$i<12;$i++){
-                $sortingIndex = $i+1;
-                $zodiacId = $newZodiacSortings[$i];
-                $sqlstr .= "update ZodiacInfo set sorting='$sortingIndex' where id='$zodiacId';";
+                $sorting = $i+1;
+                $id = $newZodiacSortings[$i];
+                $stmt->execute();  
             }
-
-            $result = $mysqlHelper->queryMultiData($con,$sqlstr);
-            $mysqlHelper->closeConnection($con);
+            
+            $stmt->close();  
         }
         
         public function modifyZodiacColor($hexColor,$currentId){
             $mysqlHelper = new MySqlHelper();
             $con = $mysqlHelper->openConnect($this->serverName,$this->userName,$this->password,$this->databaseName);
             
-            $hexColor = $hexColor;
-            $currentId = $currentId;
-            
-            $sqlstr = "update ZodiacInfo set color='$hexColor' where id='$currentId';";
-
-            $result = $mysqlHelper->queryData($con,$sqlstr);
-            $mysqlHelper->closeConnection($con);
+            $stmt = $con->prepare("update ZodiacInfo set color=? where id=?;");
+            $stmt->bind_param("si", $updateColor, $id);
+            $updateColor=$hexColor;
+            $id=$currentId;
+            $stmt->execute();  
+            $stmt->close();  
         }
     }
 

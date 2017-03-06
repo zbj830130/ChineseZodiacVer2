@@ -278,6 +278,7 @@ function refreshSwatch() {
         blue = $("#blue").slider("value"),
         hex = hexFromRGB(red, green, blue);
     $("#swatch").css("background-color", "#" + hex);
+    $(".hexColorInput").val("#" + hex);
 }
 
 function submitColor(hexColor, currentId) {
