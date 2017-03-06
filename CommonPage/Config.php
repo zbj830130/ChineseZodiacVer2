@@ -7,4 +7,5 @@
     $databaseName="ChineseZodiac";
     $app_id="425080827834231";
     $app_secret="b8b1530719ba34d803e48f158b4fba80";
+    $CZUserSessionId="CZUserSessionId";
 ?>

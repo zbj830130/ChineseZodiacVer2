@@ -25,6 +25,18 @@ function eventBinding() {
     }, function () {
         $(this).attr("src", "img/fbLoginButton_normal.png");
     });
+
+    $(".logout").click(function () {
+        $.ajax({
+            url: 'business/user_logout.php',
+            type: 'GET',
+            async: false,
+            dataType: 'json',
+            success: function (data) {
+                location.reload();
+            }
+        });
+    });
 }
 
 function resizeLayoutLoginDiv() {

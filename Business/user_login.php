@@ -9,7 +9,7 @@ include(dirname(__FILE__).'/'."../DAO/UserLoginLogDAO.php");
 
 $fblogin = new FaceBookLoginHelper();
 
-$result= $fblogin->checkLogin($app_id,$app_secret);
+$result= $fblogin->checkLogin($app_id,$app_secret,$CZUserSessionId);
 
 if($result == false){
   echo  "<div class='layoutLogin'>
@@ -21,7 +21,7 @@ if($result == false){
 }
 else{
     $sessionHelper = new SessionHelper();
-    $guid = $sessionHelper->get("CZUserSessionId");
+    $guid = $sessionHelper->get($CZUserSessionId);
     
     $logDAO = new UserLoginLogDAO($serverName,$userName,$password,$databaseName);
     $token = $logDAO->queryUserInfoByGUID($guid);
@@ -42,9 +42,9 @@ class FaceBookLoginHelper{
         return $this->jumpUrl;
     }
     
-    function checkLogin($app_id,$app_secret){
+    function checkLogin($app_id,$app_secret,$CZUserSessionId){
         $sessionHelper = new SessionHelper();
-        $userSessionId = $sessionHelper->get("CZUserSessionId");
+        $userSessionId = $sessionHelper->get($CZUserSessionId);
        
         require_once (dirname(__FILE__).'/'."../lib/Facebook/autoload.php");
         

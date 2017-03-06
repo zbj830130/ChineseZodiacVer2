@@ -9,8 +9,6 @@
     include("DAO/UserLoginLogDAO.php"); 
     require("lib/Facebook/autoload.php");
 
-    
-
     $fb = new Facebook\Facebook([  
         'app_id' => $app_id,
         'app_secret' => $app_secret,
@@ -48,7 +46,7 @@
     $sessionHelper = new SessionHelper();
     $guidHelper = new GUIDHelper();
     $sessionId = $guidHelper->create_guid();
-    $sessionHelper->set("CZUserSessionId",$sessionId);
+    $sessionHelper->set($CZUserSessionId,$sessionId);
 
     $logDAO = new UserLoginLogDAO($serverName,$userName,$password,$databaseName);
     $logDAO->insertUserInfo($sessionId,(string) $accessToken);
