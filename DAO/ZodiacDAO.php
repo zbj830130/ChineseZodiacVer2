@@ -46,7 +46,7 @@
             
             for($i=0;$i<12;$i++){
                 $sortingIndex = $i+1;
-                $zodiacId = mysql_real_escape_string($newZodiacSortings[$i]);
+                $zodiacId = $newZodiacSortings[$i];
                 $sqlstr .= "update ZodiacInfo set sorting='$sortingIndex' where id='$zodiacId';";
             }
 
@@ -58,8 +58,8 @@
             $mysqlHelper = new MySqlHelper();
             $con = $mysqlHelper->openConnect($this->serverName,$this->userName,$this->password,$this->databaseName);
             
-            $hexColor = mysql_real_escape_string($hexColor);
-            $currentId = mysql_real_escape_string($currentId);
+            $hexColor = $hexColor;
+            $currentId = $currentId;
             
             $sqlstr = "update ZodiacInfo set color='$hexColor' where id='$currentId';";
 

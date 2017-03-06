@@ -42,7 +42,7 @@ function eventBinding() {
 function resizeLayoutLoginDiv() {
     if ($(".layoutLogin").length > 0) {
         $(".footer_background_img").offset().top;
-        $(".layoutLogin").height($(".footer_background_img").offset().top + 50);
+        $(".layoutLogin").height($(".footer_background_img").offset().top - 110);
     }
 }
 
@@ -291,7 +291,9 @@ function submitColor(hexColor, currentId) {
         },
         dataType: 'json',
         success: function (data) {
-
+            if (data == false) {
+                location.reload();
+            }
         }
     });
 }

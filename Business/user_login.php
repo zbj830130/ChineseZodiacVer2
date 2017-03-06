@@ -48,19 +48,19 @@ class FaceBookLoginHelper{
        
         require_once (dirname(__FILE__).'/'."../lib/Facebook/autoload.php");
         
-        $fb = new Facebook\Facebook([
+        if($userSessionId == false){//need to login 
+            $fb = new Facebook\Facebook([
                   'app_id' => $app_id,
                   'app_secret' => $app_secret,
                   'default_graph_version' => 'v2.5',
                 ]);
 
-        $helper = $fb->getRedirectLoginHelper();  
-        $permissions = ['email']; // Optional permissions  
-        $loginUrl = $helper->getLoginUrl('http://localhost:8080/web/ChineseZodiacVer2/fb-callback.php', $permissions); 
+            $helper = $fb->getRedirectLoginHelper();  
+            $permissions = ['email']; // Optional permissions  
+            $loginUrl = $helper->getLoginUrl('http://localhost:8080/web/ChineseZodiacVer2/fb-callback.php', $permissions); 
 
-        $this->jumpUrl = htmlspecialchars($loginUrl);
-        
-        if($userSessionId == false){//need to login 
+            $this->jumpUrl = htmlspecialchars($loginUrl);
+            
             return false;   
         }
         else{//check token
