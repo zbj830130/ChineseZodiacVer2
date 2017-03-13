@@ -38,7 +38,7 @@
         <!--Summary start-->
         <contain id="summaryContain" name="summaryContain" class="summaryContain alignCenter">
             <div class="bigIcon_div border_gray">
-                <img src="img/bigIcon.png" class="zodiac_cycle" />
+                <img src="Img/bigIcon.png" class="zodiac_cycle" />
             </div>
             <div class="home_artical border_gray">
                 <h2>Summary</h2>
@@ -55,7 +55,7 @@
 
                 <div class="zodiac_div">
                     <a href="javascript:void(0)">
-                        <img src="img/zodiac-calculator-search-button.png" id="lunar_submit" class="zodiac_caculat_img" />
+                        <img src="Img/zodiac-calculator-search-button.png" id="lunar_submit" class="zodiac_caculat_img" />
                     </a>
                 </div>
                 <label id="result_label"></label>
@@ -86,7 +86,7 @@
     <script type="text/javascript" src="JS/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="JS/home.js?r=<?php echo $javasrcipt_version;?>"></script>
     <script type="text/javascript" src="JS/CalConv.js?r=<?php echo $javasrcipt_version;?>"></script>
-    <script type="text/javascript" src="Js/raphael.min.js"></script>
+    <script type="text/javascript" src="JS/raphael.min.js"></script>
     <script type="text/javascript" src="JS/raphael.icons.min.js"></script>
     <script type="text/javascript" src="JS/wheelnav.min.js"></script>
     <script type="text/javascript" src="JS/detail.js?r=<?php echo $javasrcipt_version;?>"></script>

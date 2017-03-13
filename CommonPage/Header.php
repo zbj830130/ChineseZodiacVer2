@@ -13,9 +13,9 @@ if(strpos($url,'Settings')){
     echo '<div class="nav_detail alignCenter">
             <img src="Img/icon.png" />
             <ul>
-                <li><a href="'.$href.'#tt_conver">HOME</a></li>
-                <li><a href="'.$href.'#summaryContain">SUMMARY</a></li>
-                <li><a href="'.$href.'#detailContain">DETAIL</a></li>
+                <li><a id="homeLink" href="'.$href.'#tt_conver">HOME</a></li>
+                <li><a id="summaryLink" href="'.$href.'#summaryContain">SUMMARY</a></li>
+                <li><a id="detailLink" href="'.$href.'#detailContain">DETAIL</a></li>
                 <li><a '.$style3.'>SETTING</a></li>
             </ul>
         </div>';

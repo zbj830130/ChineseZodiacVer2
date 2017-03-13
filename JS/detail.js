@@ -1,13 +1,14 @@
 $(function () {
     initZodiacs();
     zodiacDetailListOrdering();
+
 });
 
 function initZodiacs() {
     $.ajax({
-        url: 'business/zodiac_orders.php?opType=1',
+        url: 'Business/zodiac_orders.php?opType=1',
         type: 'GET',
-        async: false,
+        async: true,
         dataType: 'json',
         success: function (data) {
             var names = new Array();
@@ -32,10 +33,6 @@ function initWheelNav(names, colors) {
     wheel.markerPathFunction = markerPath().PieLineMarker;
     wheel.clickModeRotate = false;
     wheel.markerEnable = true;
-
-    //var colors = ['#b25d25', '#808080', '#ffb61e', '#d41863', '#eacd76', '#8d4bbb', '#4169E1', '#00e09e', '#00e500', '#f00056', '#8A2BE2', '#fabc35'];
-
-    //var names = ['Rat', 'Ox', 'Tiger', 'Rabbit', 'Dragon', 'Snake', 'Horse', 'Goat', 'Monkey', 'Rooster', 'Dog', 'Pig'];
 
     wheel.colors = colors;
     wheel.createWheel(names);
@@ -72,13 +69,16 @@ function initWheelNav(names, colors) {
                                 $(this).hide();
                             }
                         });
-                    });
 
+                        $("#detailContain").height(30);
+                    });
 
                     $("#wheelDiv").after(thisDetailDiv);
                 }
 
                 zodiacDetailListOrdering();
+                caculateDetilContainHeight();
+
             };
         })(newColor, name);
     };

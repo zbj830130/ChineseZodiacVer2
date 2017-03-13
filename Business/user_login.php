@@ -15,7 +15,7 @@ if($result == false){
   echo  "<div class='layoutLogin'>
             <div class='loginButtonDiv'>
                 <span>Login</span>
-                <a href='".$fblogin->getJumpUrl()."'><img class='bfLogin' src='img/fbLoginButton_normal.png' /></a>
+                <a href='".$fblogin->getJumpUrl()."'><img class='bfLogin' src='Img/fbLoginButton_normal.png' /></a>
             </div>
         </div>";
 }

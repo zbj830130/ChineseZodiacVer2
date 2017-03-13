@@ -28,7 +28,6 @@
                 <li><a href="#tab-2">Zodiac Colours Setting</a></li>
             </ul>
             <div id="tab-1" class="zodiacList">
-                <input id="prevSortings" type="hidden" />
             </div>
 
             <div id="tab-2" class="zodiacColour">
@@ -52,6 +51,7 @@
                 </div>
             </div>
         </div>
+        <input id="prevSortings" type="hidden" />
     </contain>
     <footer>
         <?php include 'CommonPage/Footer.php' ?>

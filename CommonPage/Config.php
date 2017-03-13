@@ -1,10 +1,10 @@
 <?php
-    $javasrcipt_version=1;
-    $css_version=1;
+    $javasrcipt_version=2;
+    $css_version=2;
     $serverName="localhost:3306";
-    $userName="root";
+    $userName="id1056881_root_cz";
     $password="mike@123";
-    $databaseName="ChineseZodiac";
+    $databaseName="id1056881_chinesezodiac";
     $app_id="425080827834231";
     $app_secret="b8b1530719ba34d803e48f158b4fba80";
     $CZUserSessionId="CZUserSessionId";

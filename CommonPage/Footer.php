@@ -1,5 +1,5 @@
 <?php
-   echo '<div class="footer_background_img"><img src="img/footer.png"></div>
+   echo '<div class="footer_background_img"><img src="Img/footer.png"></div>
             <div class="footer_background">
                 <div class="alignCenter footer_items">
                     <div class="footer_item">

@@ -21,14 +21,14 @@ function eventBinding() {
     });
 
     $(".bfLogin").hover(function () {
-        $(this).attr("src", "img/fbLoginButton_hover.png");
+        $(this).attr("src", "Img/fbLoginButton_hover.png");
     }, function () {
-        $(this).attr("src", "img/fbLoginButton_normal.png");
+        $(this).attr("src", "Img/fbLoginButton_normal.png");
     });
 
     $(".logout").click(function () {
         $.ajax({
-            url: 'business/user_logout.php',
+            url: 'Business/user_logout.php',
             type: 'GET',
             async: false,
             dataType: 'json',
@@ -36,6 +36,10 @@ function eventBinding() {
                 location.reload();
             }
         });
+    });
+
+    $("#tabs [href='#tab-2']").click(function () {
+        initZodiacs();
     });
 }
 
@@ -54,7 +58,7 @@ function setSubTitlePosition() {
 
 function initZodiacs() {
     $.ajax({
-        url: 'business/zodiac_orders.php?opType=1',
+        url: 'Business/zodiac_orders.php?opType=1',
         type: 'GET',
         async: true,
         dataType: 'json',
@@ -81,15 +85,17 @@ function initZodiacs() {
 
 function zodiacSort(names, ids) {
     var $list = $(".zodiacList");
+    $list.empty();
+    $("#prevSortings").val("");
+    
     var prevOrders = [];
-
     for (var i = 0; i < 12; i++) {
         var name = names[i];
         var id = ids[i];
         prevOrders[i] = id;
 
         $list.append(
-            $('<div class="items"><h3 class="item_title">Order:' + (i + 1) + '</h3><img src="img/detail_' + name + '.gif"><input type="hidden" value="' + id + '"></div>')
+            $('<div class="items"><h3 class="item_title">Order:' + (i + 1) + '</h3><img src="Img/detail_' + name + '.gif"><input type="hidden" value="' + id + '"></div>')
         );
     }
 
@@ -140,7 +146,7 @@ function modifyZodiacSorting(new_order) {
     var newSorting = JSON.stringify(new_order);
 
     $.ajax({
-        url: 'business/zodiac_orders.php?opType=2',
+        url: 'Business/zodiac_orders.php?opType=2',
         type: 'POST',
         async: true,
         data: {
@@ -160,6 +166,7 @@ function modifyZodiacSorting(new_order) {
 
 function colourSelector(names, colors, ids) {
     var $colursList = $(".nameColourList");
+    $colursList.empty();
 
     for (var i = 0; i < 12; i++) {
         var name = names[i];
@@ -283,7 +290,7 @@ function refreshSwatch() {
 
 function submitColor(hexColor, currentId) {
     $.ajax({
-        url: 'business/zodiac_orders.php?opType=3',
+        url: 'Business/zodiac_orders.php?opType=3',
         type: 'POST',
         async: true,
         data: {
@@ -294,6 +301,8 @@ function submitColor(hexColor, currentId) {
         success: function (data) {
             if (data == false) {
                 location.reload();
+            } else {
+                alert("Successed");
             }
         }
     });

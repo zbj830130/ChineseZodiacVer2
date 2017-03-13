@@ -1,5 +1,4 @@
 <?php
-    include("../Model/ZodiacModel.php");
     include("../DAO/MySqlHelper.php");
 
     class ZodiacDAO{
@@ -19,23 +18,25 @@
             $mysqlHelper = new MySqlHelper();
             $con = $mysqlHelper->openConnect($this->serverName,$this->userName,$this->password,$this->databaseName);
             
-            $sqlstr = "select * from ZodiacInfo";
-
-            $result = $mysqlHelper->queryData($con,$sqlstr);
-
             $zodiacList = array(12);
-            $i=0;
-            while ($row=mysqli_fetch_assoc($result))
-            {
-                $id=$row['id'];
-                $name=$row['name'];
-                $color=$row['color'];
-                $sorting=$row['sorting'];
+            try{
+                $sqlstr = "select id,name,color,sorting from ZodiacInfo";
+                $result = $mysqlHelper->queryData($con,$sqlstr);
+                
+                while ($row=mysqli_fetch_assoc($result))
+                {
+                    $id=$row['id'];
+                    $name=$row['name'];
+                    $color=$row['color'];
+                    $sorting=$row['sorting'];
 
-                $item = new ZodiacModel($id,$name,$color,$sorting);
-                $zodiacList[] = $item;
+                    $item = new ZodiacModel($id,$name,$color,$sorting);
+                    $zodiacList[] = $item;
+                }
             }
-
+            catch(Exception $e){
+                $zodiacList = array();
+            }
             $mysqlHelper->closeConnection($con);
             return $zodiacList;
         }
