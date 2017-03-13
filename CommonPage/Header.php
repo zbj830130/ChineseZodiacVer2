@@ -1,4 +1,14 @@
 <?php
+include("Config.php");
+
+if($isFirstTime == "yes"){
+    $url = "WebDatabaseSetting.php";  
+    echo "<script type='text/javascript'>";  
+    echo "window.location.href='$url'";  
+    echo "</script>";  
+    return;
+}
+
 $style='style="color:#ae1718";';
 $href='';
 $url = $_SERVER['REQUEST_URI'];

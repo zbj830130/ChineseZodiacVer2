@@ -1,0 +1,39 @@
+.settingDiv {
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+    text-align: center;
+    border: 1px solid gray;
+    box-shadow: 0 0 1 black;
+}
+
+.settingDiv span {
+    font-size: 2vw;
+    margin-top: 3vh;
+    display: inline-block;
+}
+
+.settingDiv form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+/*    text-align: right;*/
+}
+
+.settingDiv form label {
+    font-size: 1.5vw;
+}
+
+.settingDiv form input {
+    width: 15vw;
+    height: 3vh;
+}
+
+.settingDiv form button {
+    width: 10vw;
+    height: 4vh;
+    font-size: 1.5vw;
+}
