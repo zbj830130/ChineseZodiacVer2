@@ -9,7 +9,7 @@ include(dirname(__FILE__).'/'."../DAO/UserLoginLogDAO.php");
 
 $fblogin = new FaceBookLoginHelper();
 
-$result= $fblogin->checkLogin($app_id,$app_secret,$CZUserSessionId);
+$result= $fblogin->checkLogin($app_id,$app_secret,$CZUserSessionId,$websiteRoot);
 
 if($result == false){
   echo  "<div class='layoutLogin'>
@@ -42,7 +42,7 @@ class FaceBookLoginHelper{
         return $this->jumpUrl;
     }
     
-    function checkLogin($app_id,$app_secret,$CZUserSessionId){
+    function checkLogin($app_id,$app_secret,$CZUserSessionId,$websiteRoot){
         $sessionHelper = new SessionHelper();
         $userSessionId = $sessionHelper->get($CZUserSessionId);
        
@@ -57,8 +57,7 @@ class FaceBookLoginHelper{
 
             $helper = $fb->getRedirectLoginHelper();  
             $permissions = ['email']; // Optional permissions  
-            $loginUrl = $helper->getLoginUrl('http://localhost:8080/web/ChineseZodiacVer2/fb-callback.php', $permissions); 
-
+            $loginUrl = $helper->getLoginUrl($websiteRoot.'fb-callback.php', $permissions); 
             $this->jumpUrl = htmlspecialchars($loginUrl);
             
             return false;   

@@ -51,7 +51,7 @@
     $logDAO = new UserLoginLogDAO($serverName,$userName,$password,$databaseName);
     $logDAO->insertUserInfo($sessionId,(string) $accessToken);
 
-    $url = "../ChineseZodiacVer2/Settings.php";  
+    $url = $websiteRoot."/Settings.php";  
     echo "<script type='text/javascript'>";  
     echo "window.location.href='$url'";  
     echo "</script>";   

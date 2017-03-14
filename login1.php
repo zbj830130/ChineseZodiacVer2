@@ -21,7 +21,7 @@ $fb = new Facebook\Facebook([
 $helper = $fb->getRedirectLoginHelper();  
   
 $permissions = ['email']; // Optional permissions  
-$loginUrl = $helper->getLoginUrl('http://localhost:8080/web/ChineseZodiacVer2/fb-callback.php', $permissions);  
+$loginUrl = $helper->getLoginUrl('http://localhost:8080/fb-callback.php', $permissions);  
   
 echo '<a href="' . htmlspecialchars($loginUrl) . '">Login with Facebook!</a>';  
 ?>

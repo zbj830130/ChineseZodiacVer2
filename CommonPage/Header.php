@@ -2,7 +2,7 @@
 include("Config.php");
 
 if($isFirstTime == "yes"){
-    $url = "WebDatabaseSetting.php";  
+    $url = $websiteRoot."WebDatabaseSetting.php";  
     echo "<script type='text/javascript'>";  
     echo "window.location.href='$url'";  
     echo "</script>";  
@@ -14,9 +14,9 @@ $href='';
 $url = $_SERVER['REQUEST_URI'];
 if(strpos($url,'Settings')){
     $style3=$style.' href="javascript:void(0);"';
-    $href="home.php";
+    $href=$websiteRoot."home.php";
 }else{
-    $style3=' href="Settings.php"';
+    $style3=' href='.$websiteRoot.'Settings.php';
 }
 
 
