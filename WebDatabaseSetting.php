@@ -22,15 +22,19 @@
             <span>CHINESE ZODIAC DATABASE SETTING</span>
             <form action="Business/WebDatabaseSettingBuss.php" method="get">
                 <label>Servername:</label>
-                <input type="text" id="serverName" name="serverName" />
+                <input type="text" id="serverName" name="serverName" placeholder="localhost:3306"/>
                 <p></p>
                 <label>Username:</label>
-                <input type="text" id="userName" name="userName" />
+                <input type="text" id="userName" name="userName" placeholder="root"/>
                 <p></p>
                 <label>Password:</label>
-                <input type="text" id="password" name="password" />
+                <input type="text" id="password" name="password" placeholder="mike123"/>
+                <p></p>
+                <label>Website Domain:</label>
+                <input type="text" id="websiteDomain" name="websiteDomain" placeholder="http://localhost:8080/ChineseZodiacVer2"/>
                 <p></p>
                 <button type="submit">Submmit</button>
+                
             </form>
         </div>
     </contain>

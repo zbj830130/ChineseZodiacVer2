@@ -18,12 +18,14 @@ function updateconfig($file, $ini, $value,$type="string") {
 $serverName = $_GET['serverName'];
 $userName = $_GET['userName'];
 $password = $_GET['password'];
+$websiteRoot = $_GET['websiteDomain'];
 $isFirstTimeRunning = "no";
 
 //modify database config file
 updateconfig("../CommonPage/Config.php","serverName",$serverName);
 updateconfig("../CommonPage/Config.php","userName",$userName);
 updateconfig("../CommonPage/Config.php","password",$password);
+updateconfig("../CommonPage/Config.php","websiteRoot",$websiteRoot);
 
 
 $dao = new ZodiacDAO($serverName,$userName,$password,$databaseName);
