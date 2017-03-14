@@ -6,7 +6,7 @@ $(function () {
 
 function initZodiacs() {
     $.ajax({
-        url: 'Business/zodiac_orders.php?opType=1',
+        url: 'Business/ZodiacOrderBuss.php?opType=1',
         type: 'GET',
         async: true,
         dataType: 'json',

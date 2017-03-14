@@ -28,7 +28,7 @@ function eventBinding() {
 
     $(".logout").click(function () {
         $.ajax({
-            url: 'Business/user_logout.php',
+            url: 'Business/UserLogoutBuss.php',
             type: 'GET',
             async: false,
             dataType: 'json',
@@ -58,7 +58,7 @@ function setSubTitlePosition() {
 
 function initZodiacs() {
     $.ajax({
-        url: 'Business/zodiac_orders.php?opType=1',
+        url: 'Business/ZodiacOrderBuss.php?opType=1',
         type: 'GET',
         async: true,
         dataType: 'json',
@@ -146,7 +146,7 @@ function modifyZodiacSorting(new_order) {
     var newSorting = JSON.stringify(new_order);
 
     $.ajax({
-        url: 'Business/zodiac_orders.php?opType=2',
+        url: 'Business/ZodiacOrderBuss.php?opType=2',
         type: 'POST',
         async: true,
         data: {
@@ -290,7 +290,7 @@ function refreshSwatch() {
 
 function submitColor(hexColor, currentId) {
     $.ajax({
-        url: 'Business/zodiac_orders.php?opType=3',
+        url: 'Business/ZodiacOrderBuss.php?opType=3',
         type: 'POST',
         async: true,
         data: {
