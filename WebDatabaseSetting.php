@@ -19,7 +19,7 @@
     </header>
     <contain class="contain">
         <div class="settingDiv">
-            <span>CHINESE ZODIAC DATABASE SETTING</span>
+            <span>CHINESE ZODIAC DATABASE(MySQL) SETTING</span>
             <form action="Business/WebDatabaseSettingBuss.php" method="get">
                 <label>Servername:</label>
                 <input type="text" id="serverName" name="serverName" placeholder="localhost:3306"/>
